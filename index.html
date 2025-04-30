@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="card">
+        <table border=1px>
+            <td colspan="4" id="display">
+            
+            </td>
+            <tr>
+                <td onclick="cleardisplay()"> AC</td>
+                <td onclick="deletelast()">DE</td>
+                <td onclick="press('.')">.</td>
+                <td onclick="press('/')">/</td>
+            </tr>
+            <tr>
+                <td onclick="press('1')">1</td>
+                <td onclick="press('2')">2</td>
+                <td onclick="press('3')">3</td>
+                <td onclick="press('*')">*</td>
+            </tr>
+            <tr>
+                <td onclick="press('4')">4</td>
+                <td onclick="press('5')">5</td>
+                <td onclick="press('6')">6</td>
+                <td onclick="press('-')">-</td>
+
+
+            </tr>
+            <tr>
+                <td onclick="press('7')">7</td>
+                <td onclick="press('8')">8</td>
+                <td onclick="press('9')">9</td>
+                <td onclick="press('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="press('00')">00</td>
+                <td onclick="press('0')">0</td>
+                <td colspan="2" onclick="calculate()">=</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function press(num) {
+            const display=document.getElementById("display");
+            display.innerHTML += num;
+        }
+    function cleardisplay(){
+        const display=document.getElementById("display");
+        display.innerHTML = " ";
+    }
+    function deletelast(){
+        const display=document.getElementById("display");
+        if (display.innerHTML.length>1){
+            display.innerHTML=display.innerHTML.slice(0, -1);
+        }
+        else{
+            display.innerHTML= " ";
+        }
+    }
+    function calculate(){
+        const display=document.getElementById("display");
+        display.innerHTML=eval(display.innerHTML);
+    }
+    </script>
+</body>
+
+</html>

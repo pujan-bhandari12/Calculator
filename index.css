@@ -1,0 +1,16 @@
+td:hover{
+    background-color: brown;
+    cursor: pointer;
+    
+}
+td{
+    padding: 30px;
+    border: 0px;
+    border-radius: 20px;
+}
+.card{
+  display: flex;
+    justify-content: center;
+
+    
+}
